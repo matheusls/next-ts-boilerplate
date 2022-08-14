@@ -1,34 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js, TypeScript and Styled-Components boilerplate
+
+A boilerplate for project using [**Next.js**](https://nextjs.org/), [**TypeScript**](https://www.typescriptlang.org/) and [**Styled-Components**](https://styled-components.com/) to build pages and components.
+
+This boilerplate also makes use of these technologies:
+
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/), to enforce code style and best practices
+- [Jest](https://jestjs.io/pt-BR/) & [Testing Library](https://testing-library.com/), to write tests for components, pages and other relevant code
+- [Storybook](https://storybook.js.org/), to document components and pages
+- [Husky](https://typicode.github.io/husky/#/) & [Lint Staged](https://www.npmjs.com/package/lint-staged), to run commit hooks, ensuring code quality
+- [next-pwa](https://www.npmjs.com/package/next-pwa), to enable PWA features
+- [git-commit-msg-linter](https://www.npmjs.com/package/git-commit-msg-linter), to enforce a commit message style
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
+- [Node.js LTS or above](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/)
+
+### Installing
+
+Clone the repo and move to the project directory
+
+```(shell)
+git clone https://github.com/matheusls/next-ts-boilerplate.git
+cd next-ts-boilerplate
+```
+
+Install the dependencies with Yarn
+
+```(shell)
+yarn
+```
+
+Or with NPM
+
+```(shell)
+npm i
+```
+
+Run the project locally with Yarn
+
+```(shell)
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or with NPM
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```(shell)
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Available Scripts
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+In the project directory, you can run:
 
-## Learn More
+### `dev`
 
-To learn more about Next.js, take a look at the following resources:
+Start Next.js in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The page will reload if you make edits.\
+Errors will appear on both the terminal and the page.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### `build`
 
-## Deploy on Vercel
+Creates a production build for the app.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `start`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Start a Next.js production server.
+
+### `lint`
+
+Runs ESLint and Prettier inside the `src` folder and logs any errors or warnings.
+
+### `lint:fix`
+
+Same as above, but tries to fix errors and warnings given.\
+Anything the linter can't fix will be logged in the terminal at the end.
+
+### `test`
+
+Run Jest once, logging broken tests and coverage in the terminal.
+
+### `test:watch`
+
+Same as above, but in watch mode. Any changes to files and tests will run the tests.
+
+## Known bugs and issues
+
+- :warning: Next.js [v12.2.3](https://github.com/vercel/next.js/releases/tag/v12.2.3) adds `next.config.js` validation, which causes an [issue with the PWA configs](https://github.com/shadowwalker/next-pwa/issues/367) when using next-pwa. Until this issue is addressed, Next.js will be kept in version 12.2.2.
+- :warning: next-pwa v5.5.5 introduces an [issue](https://github.com/shadowwalker/next-pwa/issues/370) where the service worker and workbox files are not being generated in the `public` folder as they should, but in the `.next` folder instead. Until this issue is addressed, Next.js will be kept in version 5.5.4.
