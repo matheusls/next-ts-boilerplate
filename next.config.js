@@ -10,6 +10,15 @@ const nextConfig = withPWA({
     disable: !isProd,
   },
   reactStrictMode: true,
+  redirects: async () => {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
   swcMinify: true,
 });
 
