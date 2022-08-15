@@ -12,7 +12,7 @@
     "test:watch": "yarn test --watch",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
-    "husky:prepare": "husky install"
+    "husky:setup": "husky install && yarn add git-commit-msg-linter && chmod ug+x .git/hooks/* && chmod ug+x .husky/*"
   },
   "lint-staged": {
     "./src/**/*.{ts,tsx}": [
