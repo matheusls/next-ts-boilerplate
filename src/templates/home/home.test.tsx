@@ -2,19 +2,22 @@ import { render, screen } from '@testing-library/react';
 
 import Home from './home';
 
+const titleRegex = /next.js, typescript and styled-components boilerplate/i;
+const title = titleRegex.source;
+
 describe('<Home /> component', () => {
   it('should match snapshot', () => {
-    const { container } = render(<Home />);
+    const { container } = render(<Home title={title} />);
 
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render component correctly', () => {
-    render(<Home />);
+    render(<Home title={title} />);
 
     expect(
       screen.getByRole('heading', {
-        name: /next.js, typescript and styled-components boilerplate/i,
+        name: titleRegex,
       }),
     ).toBeInTheDocument();
 

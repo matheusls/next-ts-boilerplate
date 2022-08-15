@@ -28,7 +28,7 @@ exports[`<Home /> component should match snapshot 1`] = `
   class="c0"
 >
   <h1>
-    Next.js, TypeScript and Styled-Components Boilerplate
+    next.js, typescript and styled-components boilerplate
   </h1>
   <p>
     A simple project starter to work with TypeScript, React, Next.js and Styled-Components.
